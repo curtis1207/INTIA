@@ -1,0 +1,10 @@
+{% extends "gestion/base.html" %}
+{% block content %}
+<h2>Liste des assurances</h2>
+<a href="{% url 'assurance_add' %}">Ajouter une assurance</a>
+<ul>
+    {% for a in assurances %}
+    <li>{{ a.client.nom }} - {{ a.type_assurance }} ({{ a.date_souscription }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
